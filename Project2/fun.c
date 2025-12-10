@@ -42,6 +42,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include <locale.h>
+#include <stdlib.h>
+#include <time.h>
 
 int findGCD(int a, int b)
 {
@@ -56,8 +58,13 @@ int findGCD(int a, int b)
 void main(void)
 {
 	int a, b, c, d;
+	srand(time(NULL));
 	setlocale(LC_ALL, "rus");
-	printf("Введите число 1 = ");
+	a = rand() % 20;
+	b = rand() % 20;
+	c = rand() % 20;
+	printf("a = %d\nb = %d\c = %d", a, b, c);
+	/*printf("Введите число 1 = ");
 	scanf_s("%d", &a);
 	printf("Введите число 2 = ");
 	scanf_s("%d", &b);
@@ -66,7 +73,7 @@ void main(void)
 	scanf_s("%d", &c);
 
 	printf("Введите число 4 = ");
-	scanf_s("%d", &d);
+	scanf_s("%d", &d);*/
 
 
 	printf("\nНОД(%d,%d,%d) = %d\nНОД(%d,%d,%d,%d) = %d", a,b,c, findGCD(a,findGCD(b,c)), a,b,c,d, findGCD(findGCD(a,b),findGCD(c,d)));
